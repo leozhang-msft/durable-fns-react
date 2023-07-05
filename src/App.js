@@ -9,7 +9,7 @@ function App() {
 
       const content = await( await fetch(API_PATH)).json();
       console.log(content);
-      setData(text);
+      setData(content);
     })();
   });
 
