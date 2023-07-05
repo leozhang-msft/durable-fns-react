@@ -7,7 +7,8 @@ function App() {
     (async function () {
       const API_PATH = '/api/orchestrators/HelloOrchestrator'
 
-      const { statusQueryGetUri } = await( await fetch(API_PATH)).json();
+      let { statusQueryGetUri } = await( await fetch(API_PATH)).json();
+      statusQueryGetUri = statusQueryGetUri.replace('https://leozhang-js-durable-func-app.azurewebsites.net', '');
       console.log(statusQueryGetUri);
       const { status } = await (await fetch(statusQueryGetUri)).json();
       console.log(status)
