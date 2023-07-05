@@ -13,6 +13,9 @@ function App() {
 
       const status = (await fetch(statusQueryGetUri));
       console.log(status)
+      console.dir(status)
+      console.log(status.json())
+
       setData(statusQueryGetUri);
     })();
   }, []);
