@@ -8,13 +8,13 @@ function App() {
       const API_PATH = '/api/orchestrators/HelloOrchestrator'
 
       let { statusQueryGetUri } = await( await fetch(API_PATH)).json();
-      statusQueryGetUri = statusQueryGetUri.replace('https://leozhang-js-durable-func-app.azurewebsites.net', '');
+      // nevermind, this doesn't work, directs to the react app.
+      // statusQueryGetUri = statusQueryGetUri.replace('https://leozhang-js-durable-func-app.azurewebsites.net', '');
       console.log(statusQueryGetUri);
 
       const status = (await fetch(statusQueryGetUri));
-      console.log(status)
-      console.dir(status)
-      console.log(status.json())
+      const body = status.body
+      console.log(body);
 
       setData(statusQueryGetUri);
     })();
